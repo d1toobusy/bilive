@@ -23,17 +23,21 @@ reserve_for_fixing = false # If encounter MOOV crash error, delete the video or 
 upload_line = "auto" # The upload line to be used, default None is auto detect(recommended), if you want to specify, it can be "bldsa", "ws", "tx", "qn", "bda2".
 
 [slice]
-auto_slice = true # General control: true or false
-slice_prompt = """From the transcript below, extract the most emotionally powerful or interesting moment and write a viral-style video title for it.
+auto_slice = true
+prompt = """
+从以下片段中提取最吸引人的一部分，并为它生成一个具有爆款潜力的标题。你的目标是吸引观众点击这个片段。
 
-Requirements:
-1. Use casual, emotional language;
-2. Focus on funny, dramatic, heartfelt, or shocking moments;
-3. No neutral or bland titles—make it click-worthy;
-4. Keep it under 10 words;
-5. Avoid generic or repetitive phrases.
+要求：
+1. 使用口语化、情绪化的语言；
+2. 强调有趣、冲突、搞笑、感人或惊讶的瞬间；
+3. 不要中性或平淡的标题，要引发好奇或共鸣；
+4. 最多15个字，越短越有力；
+5. 不要重复主播名字，避免冗词。
 
-Transcript: {{transcript}}
+输入：{{transcript}}
+输出：
+标题：
+"""
 
 slice_duration = 60 # better not exceed 300 seconds
 slice_num = 2 # the number of slices
